@@ -1,38 +1,25 @@
 <template>
-  <Dropdown
-    id="group-dropdown"
-    :model-value="GroupLabel"
-    :options="GroupLabels"
-    class="mt-4 z-1"
-    @update:model-value="itemService?.changeGroupLabel"
-    :pt="{
+  <Dropdown id="group-dropdown" :model-value="GroupLabel" :options="GroupLabels" class="mt-4 z-1"
+    @update:model-value="itemService?.changeGroupLabel" :pt="{
       input: {
         class: 'text-xl sm:text-4xl md:text-6xl'
       },
       item: {
         class: 'text-xl sm:text-xl md:text-3xl'
       }
-    }"
-  />
-  <ShareLink class="w-full flex justify-content-center z-1 mt-3" />
+    }" />
+  <!-- <ShareLink class="w-full flex justify-content-center z-1 mt-3" /> -->
   <div ref="container" class="flex spin-container">
     <picture>
       <source srcset="/img/image.avif" type="image/avif" />
       <source srcset="/img/image.webp" type="image/webp" />
       <img src="/img/image.png" class="image" alt="background image" />
     </picture>
-    <div
-      class="icon"
-      @click="spin"
-      @keyup.enter="spin"
-      @keyup.space="spin"
-      v-tooltip.bottom="{
-        value: `↻ Spin!`,
-        class: 'text-xl',
-        escape: true
-      }"
-      tabindex="0"
-    ></div>
+    <div class="icon" @click="spin" @keyup.enter="spin" @keyup.space="spin" v-tooltip.bottom="{
+      value: `↻ Spin!`,
+      class: 'text-xl',
+      escape: true
+    }" tabindex="0"></div>
   </div>
 </template>
 
@@ -255,16 +242,12 @@ onMounted(() => {
   border-radius: 50%;
 
   background-image: url(/img/icon.png);
-  background-image: -webkit-image-set(
-    url(/img/icon.avif) type('image/avif'),
-    url(/img/icon.webp) type('image/webp'),
-    url(/img/icon.png) type('image/png')
-  );
-  background-image: image-set(
-    url(/img/icon.avif) type('image/avif'),
-    url(/img/icon.webp) type('image/webp'),
-    url(/img/icon.png) type('image/png')
-  );
+  background-image: -webkit-image-set(url(/img/icon.avif) type('image/avif'),
+      url(/img/icon.webp) type('image/webp'),
+      url(/img/icon.png) type('image/png'));
+  background-image: image-set(url(/img/icon.avif) type('image/avif'),
+      url(/img/icon.webp) type('image/webp'),
+      url(/img/icon.png) type('image/png'));
 
   background-size: contain;
 

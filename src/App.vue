@@ -11,24 +11,21 @@
   <ScrollPanel class="h-screen">
     <div class="max-w-screen overflow-x-hidden overflow-y-hidden">
       <div class="grid header text-center">
-        <h1 class="col-12 mb-0 text-4xl sm:text-5xl md:text-6xl">
+        <!-- <h1 class="col-12 mb-0 text-4xl sm:text-5xl md:text-6xl">
           <span v-if="!Fairmode">Unfair</span><span v-else>Fair</span>&nbsp;<span
             class="white-space-nowrap"
             >Spin Wheel</span
           >
-        </h1>
-        <p class="col-12 my-0 py-0 text-base sm:text-lg md:text-2xl" v-if="!Fairmode">
-          <span class="white-space-nowrap">The world is unfair,</span>&nbsp;<span
-            class="white-space-nowrap"
-            >and so is our spin wheel.</span
-          >
-        </p>
-        <p class="col-12 my-0 py-0 text-base sm:text-lg md:text-2xl" v-else>
+        </h1> -->
+        <!-- <p class="col-12 my-0 py-0 text-base sm:text-lg md:text-2xl" v-if="!Fairmode">
+          <span class="white-space-nowrap">The world is unfair,</span>&nbsp;<span class="white-space-nowrap">and so is
+            our
+            spin wheel.</span>
+        </p> -->
+        <!-- <p class="col-12 my-0 py-0 text-base sm:text-lg md:text-2xl" v-else>
           <span class="white-space-nowrap">Though the world is unfair,</span>&nbsp;<span
-            class="white-space-nowrap"
-            >fortune smiles on our spin wheel.</span
-          >
-        </p>
+            class="white-space-nowrap">fortune smiles on our spin wheel.</span>
+        </p> -->
       </div>
       <div class="flex flex-wrap justify-content-center mb-4">
         <SpinWheel></SpinWheel>
@@ -38,18 +35,10 @@
   </ScrollPanel>
 
   <SidebarPanel></SidebarPanel>
-  <Button
-    severity="info"
-    text
-    rounded
-    icon="pi pi-angle-double-left"
-    aria-label="Open sidebar"
-    class="overflow-visible sidebar-button"
-    @click="sidebarService?.openSidebar"
-    :pt="{
+  <Button severity="info" text rounded icon="pi pi-angle-double-left" aria-label="Open sidebar"
+    class="overflow-visible sidebar-button" @click="sidebarService?.openSidebar" :pt="{
       icon: { style: { fontSize: 'xx-large' } }
-    }"
-  />
+    }" />
   <DynamicDialog />
   <Dialog v-model:visible="showInputGroupDialog" modal dismissableMask header="Header">
     <template #container>
@@ -66,24 +55,14 @@
         <div class="flex mb-4 flex-column lg:flex-row">
           <span class="p-input-icon-left w-full">
             <i class="pi pi-file-import" />
-            <InputText
-              autofocus
-              v-model="inputGroupName"
-              placeholder="New Group Name"
-              :pt="{
-                root: { class: 'w-full' }
-              }"
-            />
+            <InputText autofocus v-model="inputGroupName" placeholder="New Group Name" :pt="{
+              root: { class: 'w-full' }
+            }" />
           </span>
         </div>
-        <Button
-          type="submit"
-          class="confirm-button"
-          icon="pi pi-check"
+        <Button type="submit" class="confirm-button" icon="pi pi-check"
           :label="GroupLabels.indexOf(inputGroupName) > -1 ? 'Replace' : 'Import'"
-          :severity="GroupLabels.indexOf(inputGroupName) > -1 ? 'danger' : 'success'"
-          @click="inputGroup"
-        ></Button>
+          :severity="GroupLabels.indexOf(inputGroupName) > -1 ? 'danger' : 'success'" @click="inputGroup"></Button>
       </form>
     </template>
   </Dialog>
@@ -145,7 +124,7 @@ onMounted(async () => {
     };
   } else if (navigator.globalPrivacyControl) {
     // Don't track if user has enabled Global Privacy Control
-    window.gtag = () => {};
+    window.gtag = () => { };
     console.log(
       '%cWe can see that you have enabled the Global Privacy Control, indicating that you do not wish to have your information sold or shared.',
       'font-weight:bold; color: lightgreen;',
@@ -154,7 +133,7 @@ onMounted(async () => {
     );
   } else if (navigator.userAgent.indexOf('OBS') > 0) {
     // Don't track in OBS mode to reduce performance impact
-    window.gtag = () => {};
+    window.gtag = () => { };
   } else if (import.meta.env.PROD) {
     // Setup GA
     (function (id) {
@@ -230,6 +209,7 @@ onMounted(async () => {
   h1 {
     font-size: xxx-large;
   }
+
   p {
     font-size: large;
   }
@@ -275,18 +255,23 @@ onMounted(async () => {
   0% {
     transform: scale(1);
   }
+
   40% {
     transform: scale(1.08);
   }
+
   50% {
     transform: scale(0.98);
   }
+
   55% {
     transform: scale(1.02);
   }
+
   60% {
     transform: scale(0.98);
   }
+
   100% {
     transform: scale(1);
   }
@@ -299,11 +284,13 @@ onMounted(async () => {
       0 0 2px rgba(255, 255, 255, 0.15),
       inset 0 0 1px rgba(255, 255, 255, 0.15);
   }
+
   95% {
     box-shadow:
       0 0 50px rgba(255, 255, 255, 0),
       inset 0 0 30px rgba(255, 255, 255, 0);
   }
+
   100% {
     transform: scale(2.25);
   }

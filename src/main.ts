@@ -17,6 +17,7 @@ if (
 
 import { createApp } from 'vue';
 import App from '@/App.vue';
+import router from '@/router/index.js';
 import PrimeVue from 'primevue/config';
 import PouchDBFind from 'pouchdb-find';
 import PouchDB from 'pouchdb-browser';
@@ -80,7 +81,7 @@ app.use(PrimeVue, {
   }
 });
 app.use(ConfirmationService);
-
+app.use(router);
 // PouchDB
 // https://pouchdb.com/guides/databases.html
 PouchDB.plugin(PouchDBFind);

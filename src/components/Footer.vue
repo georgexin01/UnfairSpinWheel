@@ -1,5 +1,5 @@
 <!-- eslint-disable vue/multi-word-component-names -->
-<template>
+<!-- <template>
   <footer class="fixed bottom-0 left-0 m-2 mb-1 overflow-hidden w-full white-space-nowrap">
     <a :href="url" target="_blank" rel="noopener"
       >{{ version }}<i class="pi pi-github vertical-align-middle m-2"></i>AGPL-3.0 Licensed</a
@@ -8,7 +8,7 @@
     <a :href="privacyUrl" target="_blank" rel="noopener">Privacy Policy</a>
     / Copyright © 2023 Jim60105
   </footer>
-</template>
+</template> -->
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
