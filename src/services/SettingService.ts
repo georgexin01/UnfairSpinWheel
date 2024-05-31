@@ -84,7 +84,7 @@ export class SettingService {
     const hint = document.createElement('link');
     hint.rel = 'prefetch';
     hint.as = 'audio';
-    hint.href = `/sound/${audio.value}`;
+    hint.href = `/bniwheelspin/sound/${audio.value}`;
     document.head.appendChild(hint);
   };
 

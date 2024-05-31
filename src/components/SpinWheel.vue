@@ -87,7 +87,7 @@ const playSound = () => {
 
   var src = TickSound.value.value.startsWith('data:')
     ? TickSound.value.value
-    : `/sound/${TickSound.value.value}`;
+    : `/bniwheelspin/sound/${TickSound.value.value}`;
   const audio = new Audio(src);
   audio.volume = 0.3;
   audio.play();

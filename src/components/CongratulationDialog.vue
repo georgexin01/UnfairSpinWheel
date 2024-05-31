@@ -1,9 +1,6 @@
 <template>
   <div class="congrats" ref="congrats" @click="close">
-    <div
-      ref="label"
-      class="bounce-in-fwd text-8xl label text-center max-w-screen overflow-x-hidden"
-    >
+    <div ref="label" class="bounce-in-fwd text-8xl label text-center max-w-screen overflow-x-hidden">
       {{ dialogRef?.data.item.label }}
     </div>
 
@@ -27,7 +24,7 @@ const playSound = () => {
 
   var src = CongratulationSound.value.value.startsWith('data:')
     ? CongratulationSound.value.value
-    : `/sound/${CongratulationSound.value.value}`;
+    : `/bniwheelspin/sound/${CongratulationSound.value.value}`;
   const audio = new Audio(src);
   audio.volume = 0.7;
   audio.play();
@@ -81,31 +78,38 @@ onMounted(() => {
     animation-timing-function: ease-in;
     opacity: 0;
   }
+
   38% {
     transform: scale(1);
     animation-timing-function: ease-out;
     opacity: 1;
   }
+
   55% {
     transform: scale(0.7);
     animation-timing-function: ease-in;
   }
+
   72% {
     transform: scale(1);
     animation-timing-function: ease-out;
   }
+
   81% {
     transform: scale(0.84);
     animation-timing-function: ease-in;
   }
+
   89% {
     transform: scale(1);
     animation-timing-function: ease-out;
   }
+
   95% {
     transform: scale(0.95);
     animation-timing-function: ease-in;
   }
+
   100% {
     transform: scale(1);
     animation-timing-function: ease-out;
@@ -128,6 +132,7 @@ onMounted(() => {
       filter: blur(0px);
       opacity: 1;
     }
+
     100% {
       transform: translate(#{floor(random() * 500)-250}px, #{floor(random() * 500)-250}px) scale(2);
       filter: blur(4px);
