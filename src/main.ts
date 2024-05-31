@@ -7,17 +7,8 @@
  * Please be aware that you are solely permitted to distribute this project under the "AGPL-3.0" license.
  * If you have adhered to the terms of this license, you are welcome to make modifications to this section as needed.
  */
-if (
-  !window.location.hostname.endsWith('spin-wheel.click') &&
-  window.location.hostname !== 'localhost'
-) {
-  window.location.href =
-    'https://unfair.spin-wheel.click' + window.location.pathname + window.location.search;
-}
-
 import { createApp } from 'vue';
 import App from '@/App.vue';
-import router from '@/router/index.js';
 import PrimeVue from 'primevue/config';
 import PouchDBFind from 'pouchdb-find';
 import PouchDB from 'pouchdb-browser';
@@ -81,7 +72,7 @@ app.use(PrimeVue, {
   }
 });
 app.use(ConfirmationService);
-app.use(router);
+
 // PouchDB
 // https://pouchdb.com/guides/databases.html
 PouchDB.plugin(PouchDBFind);
